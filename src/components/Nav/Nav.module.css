@@ -1,0 +1,7 @@
+.nav {
+    background-color: rebeccapurple;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,6 +1,5 @@
-import './App.css';
-import Nav from './components/Nav.jsx'
-import Cards from './components/Cards.jsx';
+import Nav from './components/Nav/Nav.jsx'
+import Cards from './components/Cards/Cards.jsx';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
@@ -78,7 +77,9 @@ function App() {
    return (
       <div className='App'>
 
-         {location.pathname !== '/' ? <Nav onSearch={onSearch} randomChar={randomChar} logOut={logOut} /> : null}
+         <div>
+            {location.pathname !== '/' ? <Nav onSearch={onSearch} randomChar={randomChar} logOut={logOut} /> : null}
+         </div>
          
          <Routes>
             <Route path='/' element={<Form login={login} />}></Route>

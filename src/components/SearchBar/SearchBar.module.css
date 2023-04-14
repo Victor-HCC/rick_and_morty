@@ -1,0 +1,25 @@
+
+
+.input {
+    border: 0px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.button {
+    border: 0px;
+    background-color: rgb(156, 211, 125);
+    transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.15);
+}
+
+.buttonFin {
+    border-radius: 0px 15px 15px 0px;
+    background-color: rgb(82, 144, 180);
+}
+
+.buttonFin:hover {
+    transform: scale(1.15);
+}
