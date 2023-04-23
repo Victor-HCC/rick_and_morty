@@ -19,7 +19,8 @@ function App() {
 
    function onSearch(id) {
       const KEY = '64c3c1e0e1dc.874898b216a91a5c1d96';
-      axios(`https://rickandmortyapi.com/api/character/${id}?key=${KEY}`)
+      // axios(`https://rickandmortyapi.com/api/character/${id}?key=${KEY}`)
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
          .then(({ data }) => {
             if (data.name && !characters.find(char => char.id === data.id)) {
                setCharacters((oldChars) => [...oldChars, data]);
