@@ -9,8 +9,10 @@ import Error from './components/Error/Error';
 import Form from './components/Form/Form';
 import Favorites from './components/Favorites/Favorites';
 
+/*
 const EMAIL = 'correo@correo.com';
 const PASSWORD = 'asd123';
+*/
 
 function App() {
 
@@ -59,11 +61,24 @@ function App() {
    const [access, setAccess] = useState(false);
    const navigate = useNavigate();
 
+   /*
    const login = (userData) => {
       if (userData.password === PASSWORD && userData.email === EMAIL) {
          setAccess(true);
          navigate('/home');
       }
+   }
+   */
+
+   const login = (userData) => {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login';
+      axios(URL + `?email=${email}&password=${password}`)
+         .then(({ data }) => {
+            const { access } = data;
+            setAccess(access);
+            access && navigate('/home');
+      });
    }
 
    const logOut = () => {
