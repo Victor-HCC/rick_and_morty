@@ -3,7 +3,8 @@ let myFavorites = [];
 
 function postFav(req, res) {
     const character = req.body;
-    myFavorites.push(character);
+    const exist = myFavorites.find(fav => fav.id === character.id);
+    if(!exist) myFavorites.push(character);
     return res.status(200).json(myFavorites);
 }
 
